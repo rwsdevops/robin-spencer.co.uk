@@ -1,1 +1,489 @@
 
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Robin Spencer</title>
+  <meta name="description" content="Robin Spencer. Councillor, technology leader, and systems thinker focused on practical change, public service, and better outcomes for people." />
+  <meta name="theme-color" content="#0f172a" />
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --line: #dbe3ec;
+      --primary: #0f766e;
+      --primary-dark: #115e59;
+      --accent: #e2e8f0;
+      --max: 1080px;
+      --radius: 18px;
+      --shadow: 0 12px 30px rgba(15, 23, 42, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      border-radius: var(--radius);
+    }
+
+    .container {
+      width: min(100% - 2rem, var(--max));
+      margin: 0 auto;
+    }
+
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(248, 250, 252, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid rgba(219, 227, 236, 0.8);
+      z-index: 20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding: 1rem 0;
+    }
+
+    .brand {
+      font-weight: 700;
+      color: var(--text);
+      letter-spacing: -0.02em;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      font-size: 0.95rem;
+    }
+
+    .hero {
+      padding: 5rem 0 3rem;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 0.9fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      background: #dff4f1;
+      color: var(--primary-dark);
+      padding: 0.35rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 1rem;
+    }
+
+    h1, h2, h3 {
+      line-height: 1.15;
+      letter-spacing: -0.03em;
+      margin: 0 0 1rem;
+    }
+
+    h1 {
+      font-size: clamp(2.2rem, 5vw, 4.5rem);
+      max-width: 10ch;
+    }
+
+    h2 {
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+    }
+
+    p {
+      margin: 0 0 1rem;
+      max-width: 70ch;
+    }
+
+    .lead {
+      font-size: 1.12rem;
+      color: var(--muted);
+      max-width: 60ch;
+    }
+
+    .hero-card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      padding: 1rem;
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+    }
+
+    .placeholder-photo {
+      aspect-ratio: 4 / 5;
+      border-radius: var(--radius);
+      background: linear-gradient(135deg, #dff4f1, #dbeafe);
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      color: var(--muted);
+      font-weight: 600;
+      text-align: center;
+      padding: 1rem;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+      margin-top: 1.5rem;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.85rem 1.1rem;
+      border-radius: 999px;
+      font-weight: 600;
+      border: 1px solid transparent;
+      transition: 0.2s ease;
+    }
+
+    .button-primary {
+      background: var(--primary);
+      color: white;
+    }
+
+    .button-primary:hover,
+    .button-primary:focus {
+      background: var(--primary-dark);
+      text-decoration: none;
+    }
+
+    .button-secondary {
+      border-color: var(--line);
+      color: var(--text);
+      background: white;
+    }
+
+    .button-secondary:hover,
+    .button-secondary:focus {
+      text-decoration: none;
+      border-color: #b9c6d4;
+      background: #f8fafc;
+    }
+
+    section {
+      padding: 2.5rem 0;
+    }
+
+    .section-intro {
+      margin-bottom: 1.25rem;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.25rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      box-shadow: var(--shadow);
+    }
+
+    .card h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.75rem;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 1.1rem;
+    }
+
+    li + li {
+      margin-top: 0.6rem;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .quote {
+      padding: 1.25rem;
+      border-left: 4px solid var(--primary);
+      background: #f0fdfa;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      color: var(--text);
+    }
+
+    footer {
+      padding: 3rem 0 4rem;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid,
+      .grid-3,
+      .grid-2 {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      h1 {
+        max-width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">Robin Spencer</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#achievements">Achievements</a>
+        <a href="#priorities">Priorities</a>
+        <a href="#working-style">Working style</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="eyebrow">Councillor · Technology leader · Systems thinker</span>
+          <h1>Practical leadership for better services and better outcomes.</h1>
+          <p class="lead">
+            I work across technology, public service, and organisational change. My focus is simple:
+            make systems work better for the people who rely on them.
+          </p>
+          <div class="cta-row">
+            <a class="button button-primary" href="#about">Read more</a>
+            <a class="button button-secondary" href="mailto:robin@rwsdevops.co.uk">Email Robin</a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="placeholder-photo" aria-label="Placeholder for Robin Spencer profile photo">
+            Add profile photo here
+            <br />
+            Suggested file: /profile-photo.jpg
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-intro">
+          <h2>About</h2>
+          <p class="muted">
+            I am a councillor and technology leader with a background in transformation, platforms, delivery, and governance.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <p>
+              I care about practical change, thoughtful leadership, and making services easier to understand and use.
+              My work sits at the point where strategy, operations, and people meet.
+            </p>
+            <p>
+              I am neurodivergent and dyslexic. I think quickly, connect ideas fast, and work best with clear structure,
+              honest feedback, and a strong sense of purpose.
+            </p>
+          </div>
+
+          <div class="card">
+            <div class="quote">
+              I believe good leadership means combining strategic thinking with empathy, clarity, and a focus on real outcomes.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Achievements</h2>
+          <p class="muted">
+            Highlights from technology leadership and public service.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Technology leadership</h3>
+            <ul>
+              <li>20 years of experience in technology, with five years in leadership roles.</li>
+              <li>Led technology and people, translating delivery into business outcomes.</li>
+              <li>Focused on making technology work better for customers and colleagues.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Public service</h3>
+            <ul>
+              <li>Serving as a Liberal Democrat councillor in local government.</li>
+              <li>Experience across scrutiny, strategy, resources, and planning policy work.</li>
+              <li>Committed to practical, accountable decision-making.</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Ways of working</h3>
+            <ul>
+              <li>Strong systems thinker with a focus on clarity and improvement.</li>
+              <li>Comfortable working across complexity, governance, and change.</li>
+              <li>Builds collaboration through structure, challenge, and trust.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="priorities">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Priorities</h2>
+          <p class="muted">
+            The themes that shape how I work and what I want to contribute.
+          </p>
+        </div>
+
+        <div class="grid-3">
+          <article class="card">
+            <h3>Better services</h3>
+            <p>
+              Technology and change should make services simpler, clearer, and more reliable for the people using them.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Responsible leadership</h3>
+            <p>
+              Good decisions balance long-term thinking, value for money, and the lived reality of staff and residents.
+            </p>
+          </article>
+
+          <article class="card">
+            <h3>Practical innovation</h3>
+            <p>
+              Innovation matters when it improves outcomes, reduces friction, and helps organisations work more effectively.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="working-style">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Working style</h2>
+          <p class="muted">
+            A few things that are useful to know about how I think and collaborate.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>What I value</h3>
+            <ul>
+              <li>Clear, structured communication.</li>
+              <li>Big-picture thinking linked to practical action.</li>
+              <li>Respectful challenge and thoughtful disagreement.</li>
+              <li>Systems that work for people, not against them.</li>
+            </ul>
+          </div>
+
+          <div class="card">
+            <h3>How to work well with me</h3>
+            <ul>
+              <li>Start with the context, then break things down clearly.</li>
+              <li>Use bullet points and structure where possible.</li>
+              <li>Be direct and kind when something needs sharpening.</li>
+              <li>Expect energy, curiosity, and a bias towards making things better.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-intro">
+          <h2>Contact</h2>
+          <p class="muted">
+            The easiest way to get in touch.
+          </p>
+        </div>
+
+        <div class="grid-2">
+          <div class="card">
+            <h3>Email</h3>
+            <p><a href="mailto:robin@rwsdevops.co.uk">robin@rwsdevops.co.uk</a></p>
+          </div>
+
+          <div class="card">
+            <h3>LinkedIn</h3>
+            <p><a href="#" target="_blank" rel="noopener noreferrer">Add your LinkedIn profile URL here</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>Robin Spencer. Councillor, technology leader, and systems thinker.</p>
+    </div>
+  </footer>
+</body>
+</html>
